@@ -7,12 +7,28 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import HomeLayout from './Layout/HomeLayout';
+import Allreviews from './Pages/Allreviews';
+import Addreview from './Pages/Addreview';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <HomeLayout></HomeLayout>,
   },
+
+  {
+
+    path:'/allreviews',
+    element:<Allreviews></Allreviews>
+  }
+  ,
+  {
+
+    path:'/addreview',
+    element:<Addreview></Addreview>
+
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
