@@ -3,6 +3,27 @@ import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 
 const Addreview = () => {
+
+  const handleSubmit = e =>{
+
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email  = e.target.email.value;
+
+    const gameTitle = e.target.gameTitle.value;
+    const coverImage = e.target.coverImage.value;
+    const publishingYear = e.target.publishingYear.value;
+    const genre = e.target.genre.value;
+    const rating = e.target.rating.value;
+    const reviewDescription = e.target.reviewDescription.value;
+
+    console.log(name,email,gameTitle,coverImage,publishingYear,genre,rating,reviewDescription)
+
+
+
+
+
+  }
     return (
         <div>
 
@@ -21,7 +42,10 @@ const Addreview = () => {
     </p>
   </div>
   <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
-    <form className="card-body">
+    <form
+    
+    onSubmit={handleSubmit}
+    className="card-body">
       {/* User Info Row */}
       <div className='flex flex-col lg:flex-row gap-5'>
         <div className="form-control flex-1">

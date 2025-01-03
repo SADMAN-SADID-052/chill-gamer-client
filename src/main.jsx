@@ -13,6 +13,8 @@ import Addreview from './Pages/Addreview';
 import Myreview from './Pages/Myreview';
 import GameWatch from './Pages/GameWatch';
 import PageError from './Pages/PageError';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,18 @@ const router = createBrowserRouter([
 
     path:'/watchList',
     element:<GameWatch></GameWatch>
+  },
+
+  {
+
+    path:'/login',
+    element:<Login></Login>
+  },
+
+  {
+
+    path:'/register',
+    element:<Register></Register>
   },
 
   {
