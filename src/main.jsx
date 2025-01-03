@@ -10,6 +10,9 @@ import {
 import HomeLayout from './Layout/HomeLayout';
 import Allreviews from './Pages/Allreviews';
 import Addreview from './Pages/Addreview';
+import Myreview from './Pages/Myreview';
+import GameWatch from './Pages/GameWatch';
+import PageError from './Pages/PageError';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +31,24 @@ const router = createBrowserRouter([
     path:'/addreview',
     element:<Addreview></Addreview>
 
+  },
+
+  {
+
+    path:'/myreview',
+    element:<Myreview></Myreview>
+  },
+
+  {
+
+    path:'/watchList',
+    element:<GameWatch></GameWatch>
+  },
+
+  {
+
+    path:"*",
+    element:<PageError></PageError>
   }
 ]);
 

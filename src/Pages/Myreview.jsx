@@ -2,21 +2,16 @@ import React from 'react';
 import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 
-const Allreviews = () => {
+const Myreview = () => {
     return (
         <div>
 
             <div className='max-w-6xl mx-auto'>
-
                 <header>
                     <NavBar></NavBar>
                 </header>
-
-                <p>All</p>
-
-
+                My review start here
             </div>
-
 
             <footer>
                 <Footer></Footer>
@@ -28,4 +23,4 @@ const Allreviews = () => {
     );
 };
 
-export default Allreviews;
+export default Myreview;
