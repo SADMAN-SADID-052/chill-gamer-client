@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Addreview = () => {
+
+  const { user } = useContext(AuthContext);
 
   const handleSubmit = e =>{
 
@@ -16,9 +19,33 @@ const Addreview = () => {
     const genre = e.target.genre.value;
     const rating = e.target.rating.value;
     const reviewDescription = e.target.reviewDescription.value;
+   
+    const newReview = {name,email,gameTitle,coverImage,publishingYear,genre,rating,reviewDescription}
+    console.log(newReview)
 
-    console.log(name,email,gameTitle,coverImage,publishingYear,genre,rating,reviewDescription)
 
+      // send data to the server
+
+      fetch('http://localhost:5000/review',{
+
+        method: 'POST',
+        headers: {
+
+          'content-type' : 'application/json'
+        },
+
+        body: JSON.stringify(newReview)
+
+
+      })
+      .then(res => res.json())
+      .then(data =>{
+
+        console.log(data)
+      })
+      .catch(err => {
+        console.error('Error submitting review:', err);
+    });
 
 
 
@@ -55,9 +82,8 @@ const Addreview = () => {
           <input 
             type="text" 
             name='name' 
-            value="John Doe" 
-            readOnly 
-            className="input input-bordered bg-gray-100" 
+            value={user?.displayName}
+           className="input input-bordered bg-gray-100" 
           />
         </div>
         <div className="form-control flex-1">
@@ -67,9 +93,8 @@ const Addreview = () => {
           <input 
             type="email" 
             name='email' 
-            value="user@example.com" 
-            readOnly 
-            className="input input-bordered bg-gray-100" 
+            value={user?.email}
+           className="input input-bordered bg-gray-100" 
           />
         </div>
       </div>

@@ -1,28 +1,60 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from '../Components/NavBar';
-import Footer from '../Components/Footer';
+
+import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+ 
+
+  const {userLogin,setUser} = useContext(AuthContext)
+  const handleLogin = (e) =>{
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email,password)
+    
+    userLogin(email,password)
+    .then(result =>{
+
+      const user = result.user;
+      setUser(user);
+      toast.success("Login Successful!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      
+      
+    })
+    .catch((error)=>{
+
+      alert('Email or password does not match')
+    })}
+
+
     return (
         <div>
 
            
 
-<div  className='max-w-6xl mx-auto'>
+<div>
 
-            <header>
-                <NavBar></NavBar>
-            </header>
+          
 <div className="contain py-16">
   <div className="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
     <h2 className="text-2xl uppercase font-medium mb-1">Login</h2>
     <p className="text-gray-600 mb-6 text-sm">Welcome! So good to have you back!</p>
-    <form>
+    <form onSubmit={handleLogin}>
       <p className="text-red-500"></p>
       <div className="space-y-2">
         <div>
-          <label htmlFor="email" className="text-gray-600 mb-2 block">
+          <label className="text-gray-600 mb-2 block">
             Email address
           </label>
           <input
@@ -37,7 +69,7 @@ const Login = () => {
       </div>
       <div className="space-y-2">
         <div>
-          <label htmlFor="password" className="text-gray-600 mb-2 block">
+          <label  className="text-gray-600 mb-2 block">
             Password
           </label>
           <div className="relative">
@@ -86,7 +118,7 @@ const Login = () => {
         </div>
         <div className="flex gap-2 pt-5">
           <p className="text-gray-600 text-sm">Don't have an account?</p>
-          <Link className="text-gray-600 text-sm underline" to="/register">
+          <Link className="text-gray-600 text-sm underline" to="/auth/register">
             Register here
           </Link>
         </div>
@@ -97,11 +129,6 @@ const Login = () => {
 </div>
 
 
-<footer>
-
-    <Footer></Footer>
-</footer>
-  
         </div>
     );
 };
