@@ -22,7 +22,18 @@ const Register = () => {
     .then(result =>{
    const user = result.user;
    setUser(user);
-   console.log(user);
+  //  console.log(user);
+
+   toast.success("Registration Successful!", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
 
     })
 

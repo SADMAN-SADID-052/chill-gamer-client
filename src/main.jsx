@@ -19,6 +19,7 @@ import AuthLayout from './Layout/AuthLayout';
 import AuthProvider from './Provider/AuthProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from './Routes/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -53,20 +54,33 @@ const router = createBrowserRouter([
   {
 
     path:'/addreview',
-    element:<Addreview></Addreview>
+    element:(
+<PrivateRoute>
+
+<Addreview></Addreview>
+</PrivateRoute>
+
+    )
 
   },
 
   {
 
     path:'/myreview',
-    element:<Myreview></Myreview>
+    element:(<PrivateRoute>
+      <Myreview></Myreview>
+    </PrivateRoute>)
   },
 
   {
 
     path:'/watchList',
-    element:<GameWatch></GameWatch>
+    element:(
+
+      <PrivateRoute>
+        <GameWatch></GameWatch>
+      </PrivateRoute>
+    )
   },
 
  

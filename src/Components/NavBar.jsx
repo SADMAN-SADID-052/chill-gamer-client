@@ -86,7 +86,7 @@ const NavBar = () => {
       {/* Tooltip for Display Name */}
       {isHovered && (
         <div className="absolute top-14 left-1 bg-gray-800 text-white text-xs w-24 p-2 rounded-2xl">
-          {user?.displayName || 'User'}
+          {user?.displayName || user?.email}
         </div>
       )}
     </div>

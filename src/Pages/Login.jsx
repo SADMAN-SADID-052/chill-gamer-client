@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
@@ -10,7 +10,9 @@ const Login = () => {
  
 
   const {userLogin,setUser} = useContext(AuthContext)
-
+  const location = useLocation();
+  console.log(location)
+  const navigate = useNavigate();
 
   // google log in
   const provider = new GoogleAuthProvider();
@@ -19,8 +21,20 @@ const Login = () => {
     
     signInWithPopup(auth,provider)
     .then((result) => {
-       
+      navigate(location?.state  ? location.state : "/");
       console.log(result)
+
+      toast.success("Login Successful!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+
 
     })
     .catch(error =>{
@@ -40,6 +54,7 @@ const Login = () => {
 
       const user = result.user;
       setUser(user);
+      navigate(location?.state  ? location.state : "/");
       toast.success("Login Successful!", {
         position: "top-center",
         autoClose: 3000,
@@ -55,7 +70,18 @@ const Login = () => {
     })
     .catch((error)=>{
 
-      alert('Email or password does not match')
+      toast.error("Email or Password does not match!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+
+      
     })}
 
 

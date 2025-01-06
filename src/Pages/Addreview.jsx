@@ -83,6 +83,7 @@ const Addreview = () => {
             type="text" 
             name='name' 
             value={user?.displayName}
+            readOnly
            className="input input-bordered bg-gray-100" 
           />
         </div>
@@ -93,7 +94,9 @@ const Addreview = () => {
           <input 
             type="email" 
             name='email' 
+
             value={user?.email}
+            readOnly
            className="input input-bordered bg-gray-100" 
           />
         </div>
