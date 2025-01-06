@@ -3,11 +3,32 @@ import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import auth from '../Firebase/firebase.login';
 
 const Login = () => {
  
 
   const {userLogin,setUser} = useContext(AuthContext)
+
+
+  // google log in
+  const provider = new GoogleAuthProvider();
+
+  const handleGoogleLogin = () =>{
+    
+    signInWithPopup(auth,provider)
+    .then((result) => {
+       
+      console.log(result)
+
+    })
+    .catch(error =>{
+
+      console.log('error',error)
+    })
+  }
+  // login user
   const handleLogin = (e) =>{
     e.preventDefault();
     const email = e.target.email.value;
@@ -114,7 +135,9 @@ const Login = () => {
         </button>
 
         <div className='text-center mt-6'>
-        <button className='btn btn-outline'>Log In With Google</button>
+        <button 
+        onClick={handleGoogleLogin}
+        className='btn btn-outline'>Log In With Google</button>
         </div>
         <div className="flex gap-2 pt-5">
           <p className="text-gray-600 text-sm">Don't have an account?</p>

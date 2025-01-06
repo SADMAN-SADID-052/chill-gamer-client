@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const NavBar = () => {
+
+  const [isHovered, setIsHovered] = useState(false);
 
   const { user, logOut} = useContext(AuthContext);
 
@@ -63,8 +65,30 @@ const NavBar = () => {
   </div>
 
   {user && (
-    <div className="hidden sm:flex gap-4 items-center">
-      <p className="btn btn-default">{user.email}</p>
+    // <div className="hidden sm:flex gap-4 items-center">
+    //   <p className="btn btn-default">{user.email}</p>
+    // </div>
+
+    // <img className='w-16 rounded-full border-2 border-red-500 hover:' src={user?.photoURL}></img>
+
+    <div
+      className="relative inline-block"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* User Profile Picture */}
+      <img
+        className="w-24 rounded-full border-2 border-red-500 cursor-pointer"
+        src={user?.photoURL}
+        alt="User Avatar"
+      />
+      
+      {/* Tooltip for Display Name */}
+      {isHovered && (
+        <div className="absolute top-14 left-1 bg-gray-800 text-white text-xs w-24 p-2 rounded-2xl">
+          {user?.displayName || 'User'}
+        </div>
+      )}
     </div>
   )}
   <div className="navbar-end">
