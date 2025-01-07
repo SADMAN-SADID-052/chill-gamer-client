@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       <ExploreDetails></ExploreDetails>
     </PrivateRoute>),
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/review/${params._id}`)
+      fetch(`http://localhost:5000/review/${params.id}`)
 
   },
   {
