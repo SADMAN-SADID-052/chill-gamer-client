@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Addreview = () => {
 
@@ -41,7 +42,15 @@ const Addreview = () => {
       .then(res => res.json())
       .then(data =>{
 
-        console.log(data)
+        console.log(data);
+
+        Swal.fire({
+          title: 'Success!',
+          text: 'Review Added Successfully!!',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
+
       })
       .catch(err => {
         console.error('Error submitting review:', err);
@@ -175,6 +184,9 @@ const Addreview = () => {
             <option value="Action">Action</option>
             <option value="RPG">RPG</option>
             <option value="Adventure">Adventure</option>
+            <option value="Simulation">Simulation</option>
+            <option value="Racing">Racing</option>
+            <option value="Puzzle">Puzzle</option>
           </select>
         </div>
       </div>
