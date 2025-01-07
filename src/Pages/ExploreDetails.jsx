@@ -35,6 +35,7 @@ const ExploreDetails = () => {
       coverImage,
       genre,
       rating,
+      publishingYear,
       reviewDescription,
       name,
       email,
