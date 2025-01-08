@@ -21,6 +21,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './Routes/PrivateRoute';
 import ExploreDetails from './Pages/ExploreDetails';
+import UpdateReview from './Components/UpdateReview';
 
 
 const router = createBrowserRouter([
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
     element:(<PrivateRoute>
       <Myreview></Myreview>
     </PrivateRoute>)
+  },
+
+  {
+    path:"/updateReview/:id",
+    element:<UpdateReview></UpdateReview>
   },
 
   {

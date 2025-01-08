@@ -1,8 +1,9 @@
 import React from 'react';
 import NavBar from '../Components/NavBar';
 import Banner from '../Components/Banner';
-import HighrateGame from '../Components/HighrateGame';
+
 import Footer from '../Components/Footer';
+import HighestRatedGame from '../Components/HighestRatedGame';
 
 const HomeLayout = () => {
     return (
@@ -22,7 +23,7 @@ const HomeLayout = () => {
                 </header>
                 <main>
                     <section>
-                        <HighrateGame></HighrateGame>
+                        <HighestRatedGame></HighestRatedGame>
                     </section>
 
                 </main>
