@@ -23,7 +23,7 @@ const NavBar = () => {
     return (
         <div>
 
-<div className="navbar bg-base-100">
+<div className="navbar bg-emerald-100 rounded-xl">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -96,9 +96,9 @@ const NavBar = () => {
     {
       user && user?.email ? (<button 
         onClick={logOut}
-        className='btn'>LogOut</button>) : 
+        className='btn btn-error font-bold text-white'>LogOut</button>) : 
       
-      ( <Link to="/auth/login" className="btn">LogIn</Link>)
+      ( <Link to="/auth/login" className="btn btn-accent font-bold text-white">LOGIN</Link>)
     }
    
   </div>

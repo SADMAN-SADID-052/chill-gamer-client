@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ReviewCard = ({review}) => {
 
-    const {_id,gameTitle,coverImage,genre,rating} = review
+    const {_id,gameTitle,coverImage,genre,rating,publishingYear} = review
     return (
         <div>
 
@@ -23,6 +23,9 @@ const ReviewCard = ({review}) => {
           </p>
           <p className="text-center text-gray-700">
             Rating: {rating}
+          </p>
+          <p className="text-center text-gray-700">
+            py: {publishingYear}
           </p>
           <div className="mt-4 text-center">
           <Link to={`/review/${_id}`} className="btn btn-neutral">

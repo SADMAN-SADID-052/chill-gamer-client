@@ -16,9 +16,10 @@ const Addreview = () => {
 
     const gameTitle = e.target.gameTitle.value;
     const coverImage = e.target.coverImage.value;
-    const publishingYear = e.target.publishingYear.value;
+    const publishingYear = parseInt(e.target.publishingYear.value);
     const genre = e.target.genre.value;
-    const rating = e.target.rating.value;
+    const rating = parseInt(e.target.rating.value);
+   
     const reviewDescription = e.target.reviewDescription.value;
    
     const newReview = {name,email,gameTitle,coverImage,publishingYear,genre,rating,reviewDescription}
