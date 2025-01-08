@@ -3,6 +3,7 @@ import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2'
+import { Slide, Bounce } from 'react-awesome-reveal';
 
 const Addreview = () => {
 
@@ -73,10 +74,13 @@ const Addreview = () => {
     
 <div className='lg:w-3/4 mx-auto'>
   <div className="text-center p-10">
-    <h1 className="text-5xl font-bold">Add Game Review</h1>
-    <p className="py-6">
+     <Slide><h1 className="text-5xl font-bold">Add Game Review</h1>
+     <p className="py-6">
       Share your thoughts on your favorite games. Provide a detailed review, rating, and other details to help others discover great games.
     </p>
+     
+     </Slide>
+ 
   </div>
   <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
     <form

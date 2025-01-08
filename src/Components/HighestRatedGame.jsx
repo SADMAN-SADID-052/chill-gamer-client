@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Fade, Zoom, Slide, Bounce } from 'react-awesome-reveal';
 
 const HighestRatedGame = () => {
   const [games, setGames] = useState([]); 
@@ -20,12 +21,16 @@ const HighestRatedGame = () => {
 
   return (
     <div className="container mx-auto my-8">
+      <Fade>
       <h2 className="text-3xl font-bold text-center mb-10">Highest Rated Games</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {games.map((game) => (
+      </Fade>
+   
+   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-pink-100 p-4 rounded-2xl">
+      <Zoom>
+      {games.map((game) => (
           <div
             key={game._id}
-            className="card bg-white shadow-md rounded-lg overflow-hidden"
+            className="card bg-white shadow-md rounded-3xl overflow-hidden border-2 border-white"
           >
             <img
               src={game.coverImage}
@@ -45,7 +50,9 @@ const HighestRatedGame = () => {
             </div>
           </div>
         ))}
+      </Zoom>
       </div>
+   
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Banner from '../Components/Banner';
 
 import Footer from '../Components/Footer';
 import HighestRatedGame from '../Components/HighestRatedGame';
+import HeroBanner from '../Components/HeroBanner';
 
 const HomeLayout = () => {
     return (
@@ -11,6 +12,8 @@ const HomeLayout = () => {
 
             <div className='max-w-6xl mx-auto'>
                 <header>
+
+                    <HeroBanner></HeroBanner>
 
                     <NavBar></NavBar>
                     <section>
