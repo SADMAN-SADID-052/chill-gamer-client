@@ -5,6 +5,7 @@ import Banner from '../Components/Banner';
 import Footer from '../Components/Footer';
 import HighestRatedGame from '../Components/HighestRatedGame';
 import HeroBanner from '../Components/HeroBanner';
+import EduGame from '../Components/EduGame';
 
 const HomeLayout = () => {
     return (
@@ -28,7 +29,11 @@ const HomeLayout = () => {
                     <section>
                         <HighestRatedGame></HighestRatedGame>
                     </section>
+                  
 
+                  <section>
+                  <EduGame></EduGame>
+                  </section>
                 </main>
             </div>
 
