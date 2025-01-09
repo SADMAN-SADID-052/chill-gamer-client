@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Register = () => {
+  const { createUser, setUser } = useContext(AuthContext);
 
-
-  const {createUser,setUser} = useContext(AuthContext);
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -16,51 +15,65 @@ const Register = () => {
     const photo = e.target.photo.value;
     const password = e.target.password.value;
 
-    console.log(name,email,password,photo);
+    console.log(name, email, password, photo);
 
-    createUser(email,password)
-    .then(result =>{
-   const user = result.user;
-   setUser(user);
-  //  console.log(user);
 
-   toast.success("Registration Successful!", {
-          position: "top-center",
+    // Password length validation
+    if (password.length < 6) {
+      toast.error('Password Should be 6 Characters or longer', {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
+      return;
+    }
+
+    
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{6,}$/;
+
+    if (!passwordRegex.test(password)) {
+      toast.error('Password must be one uppercase letter, one lowercase letter, one number, and one special character!!', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
+      return;
+    }
+
+    // Firebase Authentication
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+
+        toast.success('Registration Successful!', {
+          position: 'top-center',
           autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "dark",
+          theme: 'dark',
         });
 
-    })
-
-    .catch((error) =>{
-
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode,errorMessage);
-    })
-
-    // Password validation
- 
-
-  //   // Create user with email and password
-  //   createUser(email, password)
-  //     .then((result) => {
-
-  //       const user = result.user;
-  //       setUser(user);
-  //       console.log(result.user);
-  //       toast.success('Registration successful!');
-  //       e.target.reset();
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error:', error);
-  //       toast.error('Registration failed. Please try again.');
-  //     });
+        e.target.reset(); 
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
   };
 
   return (
@@ -72,9 +85,7 @@ const Register = () => {
           <form onSubmit={handleSignUp}>
             <div className="space-y-2">
               <div>
-                <label  className="text-gray-600 mb-2 block">
-                  Name
-                </label>
+                <label className="text-gray-600 mb-2 block">Name</label>
                 <input
                   type="text"
                   name="name"
@@ -86,9 +97,7 @@ const Register = () => {
             </div>
             <div className="space-y-2">
               <div>
-                <label  className="text-gray-600 mb-2 block">
-                  Email address
-                </label>
+                <label className="text-gray-600 mb-2 block">Email address</label>
                 <input
                   type="email"
                   name="email"
@@ -100,9 +109,7 @@ const Register = () => {
             </div>
             <div className="space-y-2">
               <div>
-                <label  className="text-gray-600 mb-2 block">
-                  Photo URL
-                </label>
+                <label className="text-gray-600 mb-2 block">Photo URL</label>
                 <input
                   type="text"
                   name="photo"
@@ -114,9 +121,7 @@ const Register = () => {
             </div>
             <div className="space-y-2">
               <div>
-                <label  className="text-gray-600 mb-2 block">
-                  Password
-                </label>
+                <label className="text-gray-600 mb-2 block">Password</label>
                 <input
                   type="password"
                   name="password"
@@ -126,6 +131,9 @@ const Register = () => {
                 />
               </div>
             </div>
+
+         
+
             <div className="mt-4">
               <button
                 type="submit"
@@ -134,13 +142,9 @@ const Register = () => {
                 Register
               </button>
 
-              <div className="text-center mt-6">
-                <button className="btn btn-outline">Log In With Google</button>
-              </div>
+             
               <div className="flex gap-2 pt-5">
                 <p className="text-gray-600 text-sm">Already have an account?</p>
-
-               
                 <Link className="text-gray-600 text-sm underline" to="/login">
                   Login Here
                 </Link>
