@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "title": "The Rise of Indie Games in 2025",
+      "summary": "Indie games are taking the gaming world by storm. Explore the trends driving their success.",
+      "description": "In recent years, indie games have gained immense popularity due to their creative storytelling and unique gameplay mechanics. With platforms like Steam and Epic Games supporting indie developers, we expect this trend to continue in 2025. Discover how small studios are revolutionizing the industry.",
+      "thumbnail": "https://img.freepik.com/free-photo/playful-diverse-people-holding-gaming-icons_53876-71529.jpg?ga=GA1.1.94081497.1723952170&semt=ais_hybrid",
+      "date": "2025-01-01"
+    },
+    {
+      "id": 2,
+      "title": "Educational Games: Learning Through Play",
+      "summary": "How educational games are reshaping the way we learn and interact with technology.",
+      "description": "Educational games are a growing sector in the gaming industry, focusing on enhancing cognitive skills, problem-solving abilities, and knowledge retention. From children to adults, these games offer valuable lessons wrapped in engaging gameplay.",
+      "thumbnail": "https://img.freepik.com/premium-vector/educational-games-kindergarten-engaged-children-teacher-interacting-with-learning-toys_277904-28973.jpg?ga=GA1.1.94081497.1723952170&semt=ais_hybrid",
+      "date": "2025-01-05"
+    },
+    {
+      "id": 3,
+      "title": "Top 10 Games to Watch Out for in 2025",
+      "summary": "A sneak peek into the most anticipated game releases of the year.",
+      "description": "From blockbuster titles to highly anticipated sequels, 2025 promises to be an exciting year for gamers. Here's our list of the top 10 games that should be on your radar.",
+      "thumbnail": "https://img.freepik.com/premium-vector/man-inside-virtual-reality-futuristic-game_24640-18616.jpg?ga=GA1.1.94081497.1723952170&semt=ais_hybrid",
+      "date": "2025-01-10"
+    },
+    {
+      "id": 4,
+      "title": "The Future of Virtual Reality in Gaming",
+      "summary": "How VR technology is transforming the gaming landscape and what's next for the industry.",
+      "description": "Virtual Reality (VR) continues to push boundaries in the gaming world. With advancements in hardware and software, immersive experiences are becoming more accessible. Learn about the latest innovations and what the future holds for VR gaming.",
+      "thumbnail": "https://img.freepik.com/free-vector/gradient-metaverse-illustration_23-2149265632.jpg?ga=GA1.1.94081497.1723952170&semt=ais_hybrid",
+      "date": "2025-01-15"
+    },
+    {
+      "id": 5,
+      "title": "Mobile Gaming Trends in 2025",
+      "summary": "Why mobile gaming is dominating the market and the trends to follow this year.",
+      "description": "With smartphones becoming more powerful, mobile gaming is now the largest segment of the gaming industry. From cloud gaming to augmented reality, we explore the trends shaping mobile gaming in 2025.",
+      "thumbnail": "https://img.freepik.com/premium-vector/online-virtual-gaming-worldwide-2d-vector_175634-28874.jpg?ga=GA1.1.94081497.1723952170&semt=ais_hybrid",
+      "date": "2025-01-20"
+    },
+    {
+      "id": 6,
+      "title": "Game Development: Tips for Indie Developers",
+      "summary": "Essential tips and tricks for aspiring game developers to create successful indie games.",
+      "description": "Starting your journey as an indie game developer? This guide covers everything from concept design to marketing strategies. Learn how to create engaging games, secure funding, and reach your target audience effectively.",
+      "thumbnail": "https://img.freepik.com/free-vector/online-games-concept_23-2148535801.jpg?ga=GA1.1.94081497.1723952170&semt=ais_hybrid",
+      "date": "2025-01-25"
+    }
+  ]
+  

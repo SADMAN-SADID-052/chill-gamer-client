@@ -38,7 +38,7 @@ const HighestRatedGame = () => {
               className="w-full h-48 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-xl font-bold mb-2">{game.gameTitle}</h3>
+              <h3 className="text-xl font-bold mb-2  text-gray-900 dark:text-gray-100">{game.gameTitle}</h3>
               <p className="text-gray-700 mb-2">Genre: {game.genre}</p>
               <p className="text-gray-700 mb-4">Rating: {game.rating}/10</p>
               <button

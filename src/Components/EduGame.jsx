@@ -13,7 +13,7 @@ const EduGame = () => {
   }, []);
 
   return (
-    <section className="bg-gradient-to-r from-green-100 to-blue-100 py-8 p-4 mb-4">
+    <div className="bg-gradient-to-r from-green-100 to-blue-100 py-8 p-4 mb-4 rounded-2xl">
     <Slide>
 
     <h2 className="text-3xl font-bold text-center mb-6 text-gray-900 dark:text-gray-100">Educational Games</h2>
@@ -33,13 +33,13 @@ const EduGame = () => {
               alt={game.title}
               className="w-full h-48 object-cover rounded-lg mb-4"
             />
-            <h3 className="text-xl font-bold mb-2">{game.title}</h3>
+            <h3 className="text-xl font-bold mb-2  text-gray-900 dark:text-gray-100">{game.title}</h3>
             <p className="text-gray-600 mb-2">{game.description}</p>
 
             
 
             <div className="flex items-center justify-center mb-4">
-              <span>
+              <span className=' text-gray-900 dark:text-gray-100'>
               Rating : 
               </span>
               <Rating
@@ -64,7 +64,7 @@ const EduGame = () => {
       </Bounce>
       </div>
       
-    </section>
+    </div>
   );
 };
 

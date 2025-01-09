@@ -6,6 +6,7 @@ import Footer from '../Components/Footer';
 import HighestRatedGame from '../Components/HighestRatedGame';
 import HeroBanner from '../Components/HeroBanner';
 import EduGame from '../Components/EduGame';
+import BlogAndNews from '../Components/BlogAndNews';
 
 const HomeLayout = () => {
     const [theme, setTheme] = useState('light'); // State to manage theme
@@ -28,7 +29,7 @@ const HomeLayout = () => {
         <div className={`${theme === 'dark' ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
             <div className='max-w-6xl mx-auto'>
                 <header>
-                    {/* Theme Toggle Button */}
+                    
                   
 
                     <HeroBanner></HeroBanner>
@@ -55,6 +56,10 @@ const HomeLayout = () => {
                     </section>
                     <section>
                         <EduGame></EduGame>
+                    </section>
+
+                    <section>
+                        <BlogAndNews></BlogAndNews>
                     </section>
                 </main>
             </div>
