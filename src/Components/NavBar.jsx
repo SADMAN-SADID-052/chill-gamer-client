@@ -11,11 +11,11 @@ const NavBar = () => {
 
   const links = <>
   
-  <li><NavLink to="/">Home</NavLink></li>
-  <li><NavLink to="/allreviews">All Reviews</NavLink></li>
-  <li><NavLink to="/addreview">Add Review</NavLink></li>
-  <li><NavLink to="/myreview">My Review</NavLink></li>
-  <li><NavLink to="/watchList">Game Watchlist</NavLink></li>
+  <li><NavLink  to="/">Home</NavLink></li>
+  <li className='text-gray-900 dark:text-gray-100 font-semibold'><NavLink to="/allreviews">All Reviews</NavLink></li>
+  <li className='text-gray-900 dark:text-gray-100 font-semibold'><NavLink to="/addreview">Add Review</NavLink></li>
+  <li className='text-gray-900 dark:text-gray-100 font-semibold'><NavLink to="/myreview">My Review</NavLink></li>
+  <li className='text-gray-900 dark:text-gray-100 font-semibold'><NavLink to="/watchList">Game Watchlist</NavLink></li>
   {/* <li><NavLink to="/"></NavLink></li> */}
   
   

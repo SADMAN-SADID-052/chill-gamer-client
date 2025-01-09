@@ -16,7 +16,7 @@ const EduGame = () => {
     <section className="bg-gradient-to-r from-green-100 to-blue-100 py-8 p-4 mb-4">
     <Slide>
 
-    <h2 className="text-3xl font-bold text-center mb-6">Educational Games</h2>
+    <h2 className="text-3xl font-bold text-center mb-6 text-gray-900 dark:text-gray-100">Educational Games</h2>
     </Slide>
     
 
