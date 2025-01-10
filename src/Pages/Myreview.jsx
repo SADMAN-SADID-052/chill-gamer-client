@@ -18,7 +18,7 @@ const MyReview = () => {
           setReviews(data);
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
           Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -53,7 +53,7 @@ const MyReview = () => {
             }
           })
           .catch((error) => {
-            console.log(error);
+            // console.log(error);
             Swal.fire('Error!', 'An error occurred. Please try again.', 'error');
           });
       }

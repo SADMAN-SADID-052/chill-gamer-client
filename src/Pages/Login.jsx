@@ -11,7 +11,7 @@ const Login = () => {
 
   const {userLogin,setUser} = useContext(AuthContext)
   const location = useLocation();
-  console.log(location)
+  // console.log(location)
   const navigate = useNavigate();
 
   // google log in
@@ -22,7 +22,7 @@ const Login = () => {
     signInWithPopup(auth,provider)
     .then((result) => {
       navigate(location?.state  ? location.state : "/");
-      console.log(result)
+      // console.log(result)
 
       toast.success("Login Successful!", {
         position: "top-center",
@@ -39,7 +39,7 @@ const Login = () => {
     })
     .catch(error =>{
 
-      console.log('error',error)
+      // console.log('error',error)
     })
   }
   // login user
@@ -47,7 +47,7 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email,password)
+    // console.log(email,password)
     
     userLogin(email,password)
     .then(result =>{

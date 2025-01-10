@@ -24,7 +24,7 @@ const Addreview = () => {
     const reviewDescription = e.target.reviewDescription.value;
    
     const newReview = {name,email,gameTitle,coverImage,publishingYear,genre,rating,reviewDescription}
-    console.log(newReview)
+    // console.log(newReview)
 
 
       // send data to the server
@@ -44,7 +44,7 @@ const Addreview = () => {
       .then(res => res.json())
       .then(data =>{
 
-        console.log(data);
+        // console.log(data);
 
         Swal.fire({
           title: 'Success!',

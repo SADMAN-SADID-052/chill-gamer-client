@@ -15,7 +15,7 @@ const Register = () => {
     const photo = e.target.photo.value;
     const password = e.target.password.value;
 
-    console.log(name, email, password, photo);
+    // console.log(name, email, password, photo);
 
 
     // Password length validation
@@ -72,7 +72,7 @@ const Register = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        // console.log(errorCode, errorMessage);
       });
   };
 
