@@ -12,7 +12,7 @@ const MyReview = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/review?email=${user.email}`)
+      fetch(`https://chill-gamer-server-zeta-eight.vercel.app/review?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setReviews(data);
@@ -40,7 +40,7 @@ const MyReview = () => {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/review/${id}`, {
+        fetch(`https://chill-gamer-server-zeta-eight.vercel.app/review/${id}`, {
           method: 'DELETE',
         })
           .then((res) => res.json())

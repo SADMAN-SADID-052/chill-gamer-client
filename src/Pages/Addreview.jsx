@@ -29,7 +29,7 @@ const Addreview = () => {
 
       // send data to the server
 
-      fetch('http://localhost:5000/review',{
+      fetch('https://chill-gamer-server-zeta-eight.vercel.app/review',{
 
         method: 'POST',
         headers: {

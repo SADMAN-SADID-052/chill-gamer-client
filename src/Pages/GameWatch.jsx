@@ -11,7 +11,7 @@ const GameWatch = () => {
   
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/watchlist?email=${user.email}`)
+      fetch(`https://chill-gamer-server-zeta-eight.vercel.app/watchlist?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.success) {

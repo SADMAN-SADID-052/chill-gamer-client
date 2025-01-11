@@ -6,7 +6,7 @@ const HighestRatedGame = () => {
   const [games, setGames] = useState([]); 
   const navigate = useNavigate();
   useEffect(() => {
-    fetch('http://localhost:5000/highestRatedGames') 
+    fetch('https://chill-gamer-server-zeta-eight.vercel.app/highestRatedGames') 
       .then((res) => res.json())
       .then((data) => setGames(data))
       .catch((error) => console.error('Error fetching games:', error));

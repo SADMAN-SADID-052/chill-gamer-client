@@ -11,7 +11,7 @@ const NavBar = () => {
 
   const links = <>
   
-  <li><NavLink  to="/">Home</NavLink></li>
+  <li className='text-gray-900 dark:text-gray-100 font-semibold'><NavLink  to="/">Home</NavLink></li>
   <li className='text-gray-900 dark:text-gray-100 font-semibold'><NavLink to="/allreviews">All Reviews</NavLink></li>
   <li className='text-gray-900 dark:text-gray-100 font-semibold'><NavLink to="/addreview">Add Review</NavLink></li>
   <li className='text-gray-900 dark:text-gray-100 font-semibold'><NavLink to="/myreview">My Review</NavLink></li>

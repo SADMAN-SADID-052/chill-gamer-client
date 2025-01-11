@@ -51,7 +51,7 @@ const router = createBrowserRouter([
 
     path:'/allreviews',
     element:<Allreviews></Allreviews>,
-    loader: () => fetch('http://localhost:5000/review')
+    loader: () => fetch('https://chill-gamer-server-zeta-eight.vercel.app/review')
   }
   ,
 
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
       <ExploreDetails></ExploreDetails>
     </PrivateRoute>),
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/review/${params.id}`)
+      fetch(`https://chill-gamer-server-zeta-eight.vercel.app/review/${params.id}`)
 
   },
   {

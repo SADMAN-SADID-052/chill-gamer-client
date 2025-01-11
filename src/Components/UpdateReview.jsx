@@ -11,7 +11,7 @@ const UpdateReview = () => {
 
   useEffect(() => {
    
-    fetch(`http://localhost:5000/review/${id}`)
+    fetch(`https://chill-gamer-server-zeta-eight.vercel.app/review/${id}`)
       .then((res) => res.json())
       .then((data) => setReview(data))
       .catch((error) => console.error(error));
@@ -20,7 +20,7 @@ const UpdateReview = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:5000/review/${id}`, {
+    fetch(`https://chill-gamer-server-zeta-eight.vercel.app/review/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

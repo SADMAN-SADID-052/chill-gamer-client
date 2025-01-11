@@ -46,7 +46,7 @@ const ExploreDetails = () => {
     };
 
 
-    fetch('http://localhost:5000/watchlist', {
+    fetch('https://chill-gamer-server-zeta-eight.vercel.app/watchlist', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
