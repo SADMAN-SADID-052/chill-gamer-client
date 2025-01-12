@@ -5,17 +5,15 @@ const PageError = () => {
     return (
         <div>
 
-            <div className='max-w-6xl mx-auto mt-10'>
-
-                <h2 className='text-5xl text-center bg-slate-700 text-white rounded-2xl p-6'>
-                    OPPS!!!! Not Found Any Page
-                </h2>
-
-                <Link className='flex justify-center mt-6' to="/">
-                    <button className='btn btn-info'>Go Back </button>
-                </Link>
-
-            </div>
+<div className="bg-gray-100">
+      <div className="h-screen flex flex-col justify-center items-center">
+        <h1 className="text-8xl font-bold text-gray-800">404</h1>
+        <p className="text-4xl font-medium text-gray-800">Page Not Found</p>
+        <Link to="/"className="mt-4 btn btn-info text-white font-bold">
+          Go Back Home
+        </Link>
+      </div>
+    </div>
             
         </div>
     );
