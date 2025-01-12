@@ -26,7 +26,7 @@ const ReviewCard = ({review}) => {
            Rating: {rating}
          </p>
          <p className="text-center text-gray-700">
-           py: {publishingYear}
+           Published : {publishingYear}
          </p>
          <div className="mt-4 text-center">
          <Link to={`/review/${_id}`} className="btn btn-neutral">
