@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import { AuthContext } from '../Provider/AuthProvider';
@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 const MyReview = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (user?.email) {
@@ -18,7 +18,6 @@ const MyReview = () => {
           setReviews(data);
         })
         .catch((error) => {
-          // console.log(error);
           Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -53,16 +52,15 @@ const MyReview = () => {
             }
           })
           .catch((error) => {
-            // console.log(error);
             Swal.fire('Error!', 'An error occurred. Please try again.', 'error');
           });
       }
     });
   };
 
-  // Update a review 
+  // Update a review
   const handleUpdateReview = (id) => {
-    navigate(`/updateReview/${id}`); 
+    navigate(`/updateReview/${id}`);
   };
 
   return (
@@ -77,39 +75,41 @@ const MyReview = () => {
           {reviews.length === 0 ? (
             <p className="text-center mt-6">No reviews found.</p>
           ) : (
-            <table className="table-auto w-full mt-6 bg-white rounded-lg shadow-lg overflow-hidden">
-              <thead>
-                <tr className="bg-gray-200">
-                  <th className="px-4 py-2">Game Title</th>
-                  <th className="px-4 py-2">Genre</th>
-                  <th className="px-4 py-2">Rating</th>
-                  <th className="px-4 py-2">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {reviews.map((review) => (
-                  <tr key={review._id} className="text-center border-b">
-                    <td className="px-4 py-2">{review.gameTitle}</td>
-                    <td className="px-4 py-2">{review.genre}</td>
-                    <td className="px-4 py-2">{review.rating}</td>
-                    <td className="px-4 py-2 flex justify-center gap-4">
-                      <button
-                        className="btn btn-outline btn-info"
-                        onClick={() => handleUpdateReview(review._id)}
-                      >
-                        Update
-                      </button>
-                      <button
-                        className="btn btn-outline btn-error"
-                        onClick={() => handleDeleteReview(review._id)}
-                      >
-                        Delete
-                      </button>
-                    </td>
+            <div className="overflow-x-auto">
+              <table className="table-auto w-full mt-6 bg-white rounded-lg shadow-lg overflow-hidden">
+                <thead>
+                  <tr className="bg-gray-200">
+                    <th className="px-4 py-2 text-sm sm:text-base">Game Title</th>
+                    <th className="px-4 py-2 text-sm sm:text-base">Genre</th>
+                    <th className="px-4 py-2 text-sm sm:text-base">Rating</th>
+                    <th className="px-4 py-2 text-sm sm:text-base">Actions</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {reviews.map((review) => (
+                    <tr key={review._id} className="text-center border-b">
+                      <td className="px-4 py-2 text-sm sm:text-base">{review.gameTitle}</td>
+                      <td className="px-4 py-2 text-sm sm:text-base">{review.genre}</td>
+                      <td className="px-4 py-2 text-sm sm:text-base">{review.rating}</td>
+                      <td className="px-4 py-2 flex flex-col sm:flex-row justify-center items-center gap-2">
+                        <button
+                          className="btn btn-outline btn-info text-sm sm:text-base"
+                          onClick={() => handleUpdateReview(review._id)}
+                        >
+                          Update
+                        </button>
+                        <button
+                          className="btn btn-outline btn-error text-sm sm:text-base"
+                          onClick={() => handleDeleteReview(review._id)}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           )}
         </main>
       </div>

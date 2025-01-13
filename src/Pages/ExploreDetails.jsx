@@ -120,8 +120,8 @@ const ExploreDetails = () => {
             <h2 className="text-center font-bold text-2xl mb-5 btn btn-accent text-white">Review</h2>
 
             <p className="">{reviewDescription}</p>
-            <div className="flex gap-4 justify-center mt-6 items-center">
-              <p className="text-cyan-600 font-semibold">Reviewer Name : 
+            <div className=" gap-4 justify-center mt-6 items-center">
+              <p className="text-cyan-600 font-semibold mb-4">Reviewer Name : 
                 
                 <span className="border-2 border-slate-300 p-1 rounded-xl ml-2"> {name}</span>
                 

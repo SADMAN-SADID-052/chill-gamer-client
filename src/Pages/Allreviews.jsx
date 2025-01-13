@@ -44,7 +44,7 @@ const AllReviews = () => {
 
    <h1 className="text-3xl font-bold text-center mb-6 mt-7">All Reviews</h1>
      
-      <div className="mb-4 flex justify-center gap-4">
+      <div className="mb-4 flex flex-col md:flex-row justify-center gap-4">
      <div className="flex items-center border-2 p-2 rounded-xl">
         <p className="text-xl font-bold text-blue-400 mr-4">Sort By : </p>
      <select
@@ -53,8 +53,10 @@ const AllReviews = () => {
           className="select select-neutral"
         >
           {/* <option  value=""> Sort by</option> */}
-          <option value="ratingAsc">Rating (Low to High)</option>
+         
+          <option value="">Sort By</option>
           <option value="ratingDesc">Rating (High to low)</option>
+          <option value="ratingAsc">Rating (Low to High)</option>
           <option value="yearAsc">Year (Ascending)</option>
           <option value="yearDesc">Year (Descending)</option>
         </select>
