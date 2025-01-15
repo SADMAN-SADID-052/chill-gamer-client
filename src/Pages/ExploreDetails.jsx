@@ -111,7 +111,7 @@ const ExploreDetails = () => {
                 fullSymbol={<span className="text-orange-600 text-2xl">★</span>}
               />
               <span className="ml-2 text-gray-700 font-semibold">
-                {rating.toFixed(1)}
+                {rating}
               </span>
             </div>
           </div>
